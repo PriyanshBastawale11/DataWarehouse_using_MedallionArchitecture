@@ -3,12 +3,22 @@
 DDL Script: Create Bronze Tables
 ===============================================================================
 Script Purpose:
-    This script creates tables in the 'bronze' schema, dropping existing tables 
+This script first creates the 'bronze' , 'silver' & 'gold' Schema    
+Then the script creates tables in the 'bronze' schema, dropping existing tables 
     if they already exist.
 	  this script to re-define the DDL structure of 'bronze schema' Tables
 ===============================================================================
 */
 
+CREATE SCHEMA bronze ;
+GO
+	
+Create Schema silver ;
+GO
+	
+Create Schema gold ;
+GO
+	
 IF OBJECT_ID('bronze.crm_cust_info', 'U') IS NOT NULL
     DROP TABLE bronze.crm_cust_info;
 GO
